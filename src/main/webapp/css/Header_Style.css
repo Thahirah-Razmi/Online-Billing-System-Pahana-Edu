@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #4B2E1E;
+  padding: 10px 0;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: #C2B280; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo {
+  display: block;
+  max-width: 100%;
+  height: 40px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(3);
+}
+
+.nav-links,
+.nav-right {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li,
+.nav-right li {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #708238; 
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: #566b2f; 
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%; 
+  left: 0;
+  background-color: #F5ECD9; 
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 5px 0;
+}
+
+.dropdown-content a {
+  background-color: #C2B280; 
+  color: #4B2E1E; 
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  border-radius: 6px;
+  margin: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #A47551; 
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.user-info {
+  color: #4B2E1E; 
+  padding: 10px;
+}
+
+.user-info1 {
+  border: 2px solid #708238; 
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #D8A48F; 
+  color: #4B2E1E;
+  font-weight: bold;
+}
+
+.logout-link {
+  background-color: #A23E48; 
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.help-link {
+  background-color: #6B4226; 
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.logout-link:hover {
+  background-color: #7d2b34; 
+}
