@@ -50,7 +50,6 @@ public class BillController extends HttpServlet {
 
             List<Bill> bills;
             // Abstraction
-            // If any filter is applied, use filtered list
             if ((account != null && !account.trim().isEmpty())
                     || (invoiceNum != null && !invoiceNum.trim().isEmpty())
                     || (fromDate != null && !fromDate.trim().isEmpty())
