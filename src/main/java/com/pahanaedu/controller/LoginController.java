@@ -1,7 +1,7 @@
 package com.pahanaedu.controller;
 
-import com.pahanaedu.model.User;
-import com.pahanaedu.service.UserService;
+import com.pahanaedu.model.User; // Layered Architecture: Model Layer
+import com.pahanaedu.service.UserService; // Layered Architecture: Service Layer
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +24,8 @@ public class LoginController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         // MVC
+        
+          // MVC Pattern
         request.getRequestDispatcher("Login.jsp").forward(request, response);
     }
 
@@ -37,9 +38,11 @@ public class LoginController extends HttpServlet {
 
         try {
             if ("admin".equals(username) && "Admin@123".equals(password)) {
+                
+                 // Encapsulation
                 HttpSession session = request.getSession();
                 session.setAttribute("admin", "admin");
-                session.setAttribute("username", "admin");
+                session.setAttribute("username", "admin");  // Encapsulation
                 session.setAttribute("role", "Admin");
                 response.sendRedirect("Admin_Dashboard.jsp"); // MVC
                 return;
@@ -47,12 +50,13 @@ public class LoginController extends HttpServlet {
 
             User user = userService.getUserByUsername(username); // Abstraction
 
+            // Encapsulation
             if (user != null && user.getPassword().equals(password)) {
                 HttpSession session = request.getSession();
-                session.setAttribute("user", user);
+                session.setAttribute("user", user); // Encapsulation
                 session.setAttribute("username", user.getUsername());
                 session.setAttribute("role", user.getRole());
-                response.sendRedirect("Staff_Dashboard.jsp");
+                response.sendRedirect("Staff_Dashboard.jsp");  // MVC
             } else {
                 request.setAttribute("errorMessage", "Invalid username or password.");
                 request.getRequestDispatcher("Login.jsp").forward(request, response);
@@ -60,6 +64,8 @@ public class LoginController extends HttpServlet {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            
+            // Layered Architecture
             request.setAttribute("errorMessage", "Database error: " + e.getMessage());
             request.getRequestDispatcher("/WEB-INF/view/error.jsp").forward(request, response);
         }

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/user")
+@WebServlet("/user") // MVC Pattern
 public class UserController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -18,10 +18,13 @@ public class UserController extends HttpServlet {
      // Encapsulation
     private UserService userService;
 
+    
+    // Singleton Pattern + Abstraction
     public void init() throws ServletException {
         userService = UserService.getInstance();  // Singleton Pattern
     }
 
+    // MVC Pattern
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -60,12 +63,12 @@ public class UserController extends HttpServlet {
         }
     }
 
-     // Abstraction + MVC
+     // Abstraction + MVC Pattern
     private void listUsers(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
-        List<User> users = userService.getAllUsers();
+        List<User> users = userService.getAllUsers(); // Abstraction
         request.setAttribute("userList", users);
-        request.getRequestDispatcher("viewUsers.jsp").forward(request, response);
+        request.getRequestDispatcher("viewUsers.jsp").forward(request, response); // MVC Pattern
     }
 
     private void showAddForm(HttpServletRequest request, HttpServletResponse response)
@@ -73,6 +76,7 @@ public class UserController extends HttpServlet {
         request.getRequestDispatcher("addUser.jsp").forward(request, response);
     }
 
+    // Layered Architecture + Encapsulation
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -81,6 +85,7 @@ public class UserController extends HttpServlet {
         request.getRequestDispatcher("editUser.jsp").forward(request, response);
     }
 
+    // Abstraction + Encapsulation
     private void addUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         String username = request.getParameter("username");
@@ -115,12 +120,14 @@ public class UserController extends HttpServlet {
         user.setPassword(password); // Encapsulation
         user.setRole(role);
 
-        userService.addUser(user);
+        // Service Layer Pattern
+        userService.addUser(user);  // Abstraction
         HttpSession session = request.getSession();
         session.setAttribute("message", "User registered successfully!");
         response.sendRedirect("user?action=add");
     }
 
+    // Layered Architecture
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -129,7 +136,7 @@ public class UserController extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
 
-        User existingUser = userService.getUserById(id);
+        User existingUser = userService.getUserById(id);// Abstraction
 
         if (existingUser == null) {
             request.setAttribute("errorMessage", "User not found.");
@@ -145,11 +152,13 @@ public class UserController extends HttpServlet {
                 ? existingUser.getPassword()
                 : password;
 
+        // Encapsulation
         User updatedUser = new User(id, username, email, finalPassword, role);
-        userService.updateUser(updatedUser);
+        userService.updateUser(updatedUser); // Abstraction
         response.sendRedirect("user?action=list&updated=true");
     }
 
+    // Abstraction
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));

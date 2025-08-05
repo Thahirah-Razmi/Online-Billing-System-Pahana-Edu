@@ -1,4 +1,4 @@
-package com.pahanaedu.controller;
+package com.pahanaedu.controller; // Controller Layer (MVC Architecture)
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.pahanaedu.model.Book;
+import com.pahanaedu.model.Book; // Model Layer
 
-import com.pahanaedu.service.BookService;
+import com.pahanaedu.service.BookService; // Service Layer
 
 @WebServlet("/BookController")
 public class BookController extends HttpServlet {
@@ -68,6 +68,7 @@ public class BookController extends HttpServlet {
             if ("add".equals(action)) {
                 Book book = extractBook(request); //Encapsulation
 
+                // Abstraction
                 if (bookService.isDuplicateBook(book.getTitle(), book.getLanguage())) {
                     request.setAttribute("error", "Book with same title in same language already exists.");
 
@@ -95,6 +96,7 @@ public class BookController extends HttpServlet {
         }
     }
 
+    //Encapsulation
     private Book extractBook(HttpServletRequest request) {
         String title = request.getParameter("title");
         String category = request.getParameter("category");
@@ -104,6 +106,7 @@ public class BookController extends HttpServlet {
         return new Book(0, title, category, author, language, price);
     }
 
+    //Abstraction 
     private void listBooks(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
 

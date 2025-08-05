@@ -47,6 +47,7 @@ public class CustomerController extends HttpServlet {
                 return;
             }
 
+            // Layered Architecture
             if ("add".equals(action)) {
                 showAddForm(request, response);
                 return;
@@ -76,7 +77,7 @@ public class CustomerController extends HttpServlet {
 
         if ("add".equals(action)) {
             // Layered Architecture
-            Customer customer = extractCustomer(request);
+            Customer customer = extractCustomer(request); //️ Abstraction + Encapsulation
             HttpSession session = request.getSession();
 
             if (customerService.addCustomer(customer)) {
@@ -126,7 +127,7 @@ public class CustomerController extends HttpServlet {
 
         String AccountNumber = account.generateNextAccountNumber();
 
-        Customer customer = new Customer();
+        Customer customer = new Customer(); // Encapsulation
 
         customer.setAccountNumber(AccountNumber);
         customer.setName(request.getParameter("name"));
@@ -142,6 +143,7 @@ public class CustomerController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
 
         try {
+            // Layered Architecture
             customerService.deleteCustomer(id);
             response.sendRedirect("CustomerController?action=list&deleted=true");
         } catch (SQLException e) {

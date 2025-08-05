@@ -1,4 +1,4 @@
-package com.pahanaedu.controller;
+package com.pahanaedu.controller;// Controller Layer - Part of MVC Architecture
 
 import java.io.IOException;
 import java.util.List;
@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.pahanaedu.service.BookService;
-import com.pahanaedu.model.Book;
+import com.pahanaedu.service.BookService; // Service Layer - Part of Layered Architecture
+import com.pahanaedu.model.Book;  // Model Layer
 
-@WebServlet("/allBooks") // MVC
+@WebServlet("/allBooks") // Model-View-Controller (MVC) Architecture
 public class AllBooksController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -31,6 +31,7 @@ public class AllBooksController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
 
+        // Model-View-Controller (MVC) Architecture + Abstraction
         String query = request.getParameter("query");
         List<Book> books;
 
@@ -38,7 +39,7 @@ public class AllBooksController extends HttpServlet {
             if (query != null && !query.trim().isEmpty()) {
                 books = bookService.searchBooks(query); //Abstraction + Encapsulation
             } else {
-                books = bookService.getAllBooks(); //Encapsulation
+                books = bookService.getAllBooks(); //Abstraction + Encapsulation
             }
 
             request.setAttribute("bookList", books);

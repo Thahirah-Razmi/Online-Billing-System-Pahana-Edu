@@ -1,10 +1,11 @@
-package com.pahanaedu.controller;
+package com.pahanaedu.controller; // Controller Layer (MVC Architecture)
 
 import com.pahanaedu.model.Bill;
-import com.pahanaedu.model.Book;
+import com.pahanaedu.model.Book; // Model Layer
 import com.pahanaedu.model.Customer;
+
 import com.pahanaedu.service.BillService;
-import com.pahanaedu.service.BookService;
+import com.pahanaedu.service.BookService; // Service Layer (Business Logic)
 import com.pahanaedu.service.CustomerService;
 
 import javax.servlet.ServletException;
@@ -14,6 +15,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.*;
 
+
+// MVC + Layered Architecture 
 @WebServlet("/BillController")
 public class BillController extends HttpServlet {
 
@@ -50,7 +53,6 @@ public class BillController extends HttpServlet {
 
             List<Bill> bills;
             // Abstraction
-            // If any filter is applied, use filtered list
             if ((account != null && !account.trim().isEmpty())
                     || (invoiceNum != null && !invoiceNum.trim().isEmpty())
                     || (fromDate != null && !fromDate.trim().isEmpty())
@@ -59,7 +61,7 @@ public class BillController extends HttpServlet {
                 bills = billService.getFilteredBills(account, invoiceNum, fromDate, toDate);
             } else {
                 // No filters, fetch all
-                bills = billService.getAllBills();
+                bills = billService.getAllBills();// Abstraction
             }
 
             request.setAttribute("billList", bills);
@@ -133,7 +135,7 @@ public class BillController extends HttpServlet {
         bill.setTotalAmount(grandTotal);
         bill.setStaffUsername(staffUser);
 
-        boolean saved = billService.addBill(bill);
+        boolean saved = billService.addBill(bill);// Abstraction
 
         if (!saved) {
             request.setAttribute("errorMessage", "Failed to save bill.");
