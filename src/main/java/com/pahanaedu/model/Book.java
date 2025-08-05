@@ -2,6 +2,7 @@ package com.pahanaedu.model;
 
 public class Book {
 
+    // Encapsulation
     private int id;
     private String title;
     private String category;
@@ -10,6 +11,7 @@ public class Book {
     private double price;
 
     public Book() {
+
     }
 
     public Book(int id, String title, String category, String author, String language, double price) {

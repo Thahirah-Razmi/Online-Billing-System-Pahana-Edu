@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 public class Bill {
 
+    // Encapsulation
     private int id;
     private String accountNumber;
     private String customerName;
@@ -12,7 +13,6 @@ public class Bill {
     private Timestamp billingTime;
     private String staffUsername;
 
-    // Getters and setters
     public int getId() {
         return id;
     }
@@ -68,4 +68,5 @@ public class Bill {
     public void setStaffUsername(String staffUsername) {
         this.staffUsername = staffUsername;
     }
+    
 }

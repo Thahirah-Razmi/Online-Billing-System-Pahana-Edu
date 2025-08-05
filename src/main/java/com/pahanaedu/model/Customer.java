@@ -2,6 +2,7 @@ package com.pahanaedu.model;
 
 public class Customer {
 
+    // Encapsulation
     private int id;
     private String accountNumber;
     private String name;
@@ -10,11 +11,10 @@ public class Customer {
     private String email;
     private String createdAt;
 
-    // Default constructor
     public Customer() {
+        
     }
 
-    // Parameterized constructor
     public Customer(int id, String accountNumber, String name, String address, String telephone, String email, String createdAt) {
         this.id = id;
         this.accountNumber = accountNumber;
@@ -22,10 +22,8 @@ public class Customer {
         this.address = address;
         this.telephone = telephone;
         this.email = email;
-
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }

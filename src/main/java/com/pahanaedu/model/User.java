@@ -2,6 +2,7 @@ package com.pahanaedu.model;
 
 public class User {
 
+    // Encapsulation
     private int id;
     private String username;
     private String email;
@@ -9,6 +10,7 @@ public class User {
     private String role;
 
     public User() {
+        
     }
 
     public User(int id, String username, String email, String password, String role) {
@@ -19,7 +21,6 @@ public class User {
         this.role = role;
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -59,4 +60,5 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+    
 }
