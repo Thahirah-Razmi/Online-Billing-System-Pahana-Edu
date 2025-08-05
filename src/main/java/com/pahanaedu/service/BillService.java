@@ -7,13 +7,16 @@ import java.util.List;
 
 public class BillService {
 
+    //Encapsulation
     private static BillService instance;
+    // Service Layer Pattern
     private final BillDAO billDAO;
 
     private BillService() {
         billDAO = new BillDAO();
     }
 
+     // Singleton Pattern
     public static BillService getInstance() {
         if (instance == null) {
             instance = new BillService();
@@ -21,6 +24,7 @@ public class BillService {
         return instance;
     }
 
+    //Abstraction
     public boolean addBill(Bill bill) {
         return billDAO.addBill(bill);
     }
