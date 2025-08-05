@@ -6,10 +6,13 @@ import java.util.*;
 
 public class BookDAO {
 
+     // Abstraction + Layered Architecture
     public void addBook(Book book) throws SQLException {
 
         String sql = "INSERT INTO books (title, category, author, language, price) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            // Encapsulation
             stmt.setString(1, book.getTitle());
             stmt.setString(2, book.getCategory());
             stmt.setString(3, book.getAuthor());
@@ -21,12 +24,15 @@ public class BookDAO {
 
     }
 
+    // Abstraction
     public List<Book> getAllBooks() throws SQLException {
 
         List<Book> list = new ArrayList<>();
         String sql = "SELECT * FROM books";
         try (Connection conn = DBConnectionFactory.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
+                
+                // Abstraction + Encapsulation
                 list.add(new Book(
                         rs.getInt("id"),
                         rs.getString("title"),
@@ -39,6 +45,7 @@ public class BookDAO {
         return list;
     }
 
+    // Abstraction
     public Book getBookById(int id) throws SQLException {
 
         String sql = "SELECT * FROM books WHERE id = ?";
@@ -46,7 +53,7 @@ public class BookDAO {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                return new Book(
+                return new Book( // Encapsulation
                         rs.getInt("id"),
                         rs.getString("title"),
                         rs.getString("category"),
@@ -58,6 +65,7 @@ public class BookDAO {
         return null;
     }
 
+    // Abstraction + Encapsulation
     public void updateBook(Book book) throws SQLException {
 
         String sql = "UPDATE books SET title=?, category=?, author=?, language=?, price=? WHERE id=?";
@@ -72,6 +80,7 @@ public class BookDAO {
         }
     }
 
+    // Abstraction
     public void deleteBook(int id) throws SQLException {
 
         String sql = "DELETE FROM books WHERE id=?";
@@ -81,6 +90,7 @@ public class BookDAO {
         }
     }
 
+    // Abstraction + Encapsulation
     public List<Book> searchBooks(String keyword) {
         List<Book> books = new ArrayList<>();
         String sql = "SELECT * FROM books WHERE LOWER(title) LIKE ? OR LOWER(author) LIKE ? OR LOWER(category) LIKE ? OR LOWER(language) LIKE ?";
@@ -95,7 +105,9 @@ public class BookDAO {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Book b = new Book();
+                Book b = new Book();// Abstraction
+                
+                // Encapsulation
                 b.setId(rs.getInt("id"));
                 b.setTitle(rs.getString("title"));
                 b.setCategory(rs.getString("category"));
@@ -112,6 +124,7 @@ public class BookDAO {
         return books;
     }
 
+    // Abstraction
     public boolean isBookNameOrLanguageExists(String bookname, String language) throws SQLException {
 
         String sql = "SELECT COUNT(*) FROM books WHERE LOWER(TRIM(title)) = ? AND LOWER(TRIM(language)) = ?";

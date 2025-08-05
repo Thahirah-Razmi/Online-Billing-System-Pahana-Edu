@@ -4,8 +4,11 @@ import com.pahanaedu.model.User;
 import java.sql.*;
 import java.util.*;
 
+// DAO Design Pattern + Layered Architecture + Abstraction + Encapsulation 
+
 public class UserDAO {
 
+    // Abstraction
     public void addUser(User user) throws SQLException {
         String sql = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
         try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -20,6 +23,7 @@ public class UserDAO {
     public boolean isUsernameOrEmailExists(String username, String email) throws SQLException {
         String sql = "SELECT COUNT(*) FROM users WHERE username = ? OR email = ?";
         try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            // Encapsulation
             stmt.setString(1, username);
             stmt.setString(2, email);
             ResultSet rs = stmt.executeQuery();

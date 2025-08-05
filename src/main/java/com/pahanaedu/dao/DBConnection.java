@@ -10,13 +10,14 @@ public class DBConnection {
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
 
-    private static DBConnection instance;
-    private Connection connection;
+    private static DBConnection instance; // Singleton Instance
+    private Connection connection; // Encapsulation
 
     private DBConnection() {
         createConnection();
     }
 
+    // Singleton Pattern
     public static DBConnection getInstance() {
         if (instance == null) {
             synchronized (DBConnection.class) {
@@ -28,6 +29,7 @@ public class DBConnection {
         return instance;
     }
 
+    // Abstraction + Encapsulation
     public Connection getConnection() {
         try {
             if (connection == null || connection.isClosed()) {
@@ -39,6 +41,7 @@ public class DBConnection {
         return connection;
     }
 
+    // Abstraction + Encapsulation
     private void createConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");

@@ -7,13 +7,18 @@ import java.util.*;
 
 public class BillDAO {
 
+    // Encapsulation
     public boolean addBill(Bill bill) {
+        
+        // Layered Architecture
         String sql = "INSERT INTO billing "
                 + "(customer_account_number, customer_name, books_purchased, "
                 + " total_amount, generated_by) "
                 + "VALUES (?,?,?,?,?)";
-        try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+        
+        try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) { // Layered Architecture
 
+            // Encapsulation
             ps.setString(1, bill.getAccountNumber());
             ps.setString(2, bill.getCustomerName());
             ps.setString(3, bill.getBooksPurchased());
@@ -21,7 +26,6 @@ public class BillDAO {
             ps.setString(5, bill.getStaffUsername());
 
             int rows = ps.executeUpdate();
-            //      System.out.println("Rows affected: " + rows);
 
             if (rows == 0) {
                 return false;
@@ -34,8 +38,7 @@ public class BillDAO {
                 try (ResultSet rs = latestPs.executeQuery()) {
                     if (rs.next()) {
                         int id = rs.getInt("id");
-                        bill.setId(id);
-                        //   System.out.println("✅ Workaround Bill ID: " + id);
+                        bill.setId(id); // Encapsulation
                         return true;
                     }
                 }
@@ -47,13 +50,14 @@ public class BillDAO {
         return false;
     }
 
+    // Abstraction
     public List<Bill> getAllBills() {
         List<Bill> list = new ArrayList<>();
         String sql = "SELECT * FROM billing ORDER BY bill_date DESC";
         try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                Bill b = new Bill();
+                Bill b = new Bill();//Abstraction
                 b.setId(rs.getInt("id"));
                 b.setAccountNumber(rs.getString("customer_account_number"));
                 b.setCustomerName(rs.getString("customer_name"));
@@ -61,7 +65,7 @@ public class BillDAO {
                 b.setTotalAmount(rs.getDouble("total_amount"));
                 b.setBillingTime(rs.getTimestamp("bill_date"));
                 b.setStaffUsername(rs.getString("generated_by"));
-                list.add(b);
+                list.add(b);//Encapsulation
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,6 +73,7 @@ public class BillDAO {
         return list;
     }
 
+    // Abstraction
     public Bill getBillById(int id) {
         String sql = "SELECT * FROM billing WHERE id = ?";
         try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -76,7 +81,7 @@ public class BillDAO {
             ps.setInt(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    Bill b = new Bill();
+                    Bill b = new Bill(); //Abstraction
                     b.setId(rs.getInt("id"));
                     b.setAccountNumber(rs.getString("customer_account_number"));
                     b.setCustomerName(rs.getString("customer_name"));
@@ -84,7 +89,7 @@ public class BillDAO {
                     b.setTotalAmount(rs.getDouble("total_amount"));
                     b.setBillingTime(rs.getTimestamp("billing_date"));
                     b.setStaffUsername(rs.getString("generated_by"));
-                    return b;
+                    return b; //Abstraction + Encapsulation
                 }
             }
         } catch (SQLException e) {
@@ -93,6 +98,7 @@ public class BillDAO {
         return null;
     }
 
+    // Abstraction
     public boolean deleteBill(int id) {
         String sql = "DELETE FROM billing WHERE id = ?";
         try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -104,9 +110,11 @@ public class BillDAO {
         }
     }
 
+    // Abstraction
     public List<Bill> getFilteredBills(String account, String invoiceNum, String fromDate, String toDate) {
         List<Bill> list = new ArrayList<>();
 
+        //Abstraction
         StringBuilder sql = new StringBuilder("SELECT * FROM billing WHERE 1=1");
         List<Object> params = new ArrayList<>();
 
@@ -135,13 +143,14 @@ public class BillDAO {
 
         try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql.toString())) {
 
+            // Abstraction
             for (int i = 0; i < params.size(); i++) {
                 ps.setObject(i + 1, params.get(i));
             }
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Bill b = new Bill();
+                Bill b = new Bill();//Abstraction
                 b.setId(rs.getInt("id"));
                 b.setAccountNumber(rs.getString("customer_account_number"));
                 b.setCustomerName(rs.getString("customer_name"));
@@ -149,7 +158,7 @@ public class BillDAO {
                 b.setTotalAmount(rs.getDouble("total_amount"));
                 b.setBillingTime(rs.getTimestamp("bill_date"));
                 b.setStaffUsername(rs.getString("generated_by"));
-                list.add(b);
+                list.add(b); // Encapsulation
             }
 
         } catch (SQLException e) {

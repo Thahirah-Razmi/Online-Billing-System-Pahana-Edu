@@ -6,6 +6,7 @@ import java.util.*;
 
 public class CustomerDAO {
 
+     // Abstraction
     public String generateNextAccountNumber() {
         String prefix = "PAH";
         String nextAccount = prefix + "001";
@@ -16,7 +17,7 @@ public class CustomerDAO {
 
             if (rs.next()) {
                 String lastAccount = rs.getString("account_number");
-                int lastNum = Integer.parseInt(lastAccount.substring(3));
+                int lastNum = Integer.parseInt(lastAccount.substring(3)); // Encapsulation
                 int newNum = lastNum + 1;
                 nextAccount = prefix + String.format("%03d", newNum);
             }
@@ -28,6 +29,7 @@ public class CustomerDAO {
         return nextAccount;
     }
 
+     // Layered Architecture + Encapsulation
     public boolean addCustomer(Customer customer) {
 
         String sql = "INSERT INTO customers (account_number, name, address, telephone, email) VALUES (?, ?, ?, ?, ?)";
@@ -52,6 +54,7 @@ public class CustomerDAO {
         return false;
     }
 
+    // Abstraction + Encapsulation
     public Customer getCustomerByAccount(String accountNumber) {
         String sql = "SELECT * FROM customers WHERE account_number = ?";
         try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -74,6 +77,7 @@ public class CustomerDAO {
         return null;
     }
 
+    // Abstraction
     public List<Customer> getAllCustomers() {
         List<Customer> list = new ArrayList<>();
 
@@ -100,6 +104,7 @@ public class CustomerDAO {
         return list;
     }
 
+    // Abstraction + Encapsulation
     public List<Customer> searchCustomer(String keyword) {
         List<Customer> customer = new ArrayList<>();
         String sql = "SELECT * FROM customers WHERE LOWER(account_number) LIKE ? OR LOWER(name) LIKE ? OR LOWER(address) LIKE ? OR LOWER(telephone) LIKE ? OR LOWER(email) LIKE ?";
@@ -132,6 +137,7 @@ public class CustomerDAO {
         return customer;
     }
 
+    // Abstraction + Encapsulation
     public Customer getCustomerById(int id) throws SQLException {
 
         String sql = "SELECT * FROM customers WHERE id = ?";
@@ -153,6 +159,7 @@ public class CustomerDAO {
         return null;
     }
 
+    // Abstraction + Encapsulation
     public boolean updateCustomer(Customer customer) {
         final String sql
                 = "UPDATE customers "
@@ -176,6 +183,7 @@ public class CustomerDAO {
         }
     }
 
+    // Abstraction
     public void deleteCustomer(int id) throws SQLException {
 
         String sql = "DELETE FROM customers WHERE id=?";
