@@ -13,36 +13,39 @@ import java.sql.SQLException;
 public class LoginController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
+    
+    // Encapsulation
     private UserService userService;
 
+    // Singleton Pattern + Abstractio
     public void init() throws ServletException {
         userService = UserService.getInstance();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         // MVC
         request.getRequestDispatcher("Login.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // Abstraction
         String username = request.getParameter("username").trim();
         String password = request.getParameter("password").trim();
 
         try {
-            // Admin login (bypasses DB for security)
             if ("admin".equals(username) && "Admin@123".equals(password)) {
                 HttpSession session = request.getSession();
                 session.setAttribute("admin", "admin");
                 session.setAttribute("username", "admin");
                 session.setAttribute("role", "Admin");
-                response.sendRedirect("Admin_Dashboard.jsp");
+                response.sendRedirect("Admin_Dashboard.jsp"); // MVC
                 return;
             }
 
-            // Other users login (plain text comparison)
-            User user = userService.getUserByUsername(username);
+            User user = userService.getUserByUsername(username); // Abstraction
 
             if (user != null && user.getPassword().equals(password)) {
                 HttpSession session = request.getSession();

@@ -12,15 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.pahanaedu.service.BookService;
 import com.pahanaedu.model.Book;
 
-@WebServlet("/allBooks")
+@WebServlet("/allBooks") // MVC
 public class AllBooksController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
+     //Encapsulation
     private BookService bookService;
 
     public void init() {
-        bookService = BookService.getInstance(); // Singleton pattern
+         //Abstraction
+        bookService = BookService.getInstance(); // Singleton Pattern
 
     }
 
@@ -34,9 +36,9 @@ public class AllBooksController extends HttpServlet {
 
         try {
             if (query != null && !query.trim().isEmpty()) {
-                books = bookService.searchBooks(query);
+                books = bookService.searchBooks(query); //Abstraction + Encapsulation
             } else {
-                books = bookService.getAllBooks();
+                books = bookService.getAllBooks(); //Encapsulation
             }
 
             request.setAttribute("bookList", books);

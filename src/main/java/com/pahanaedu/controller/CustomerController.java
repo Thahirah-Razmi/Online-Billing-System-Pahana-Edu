@@ -21,32 +21,21 @@ public class CustomerController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
+    // Encapsulation:
     private CustomerService customerService;
 
     public void init() {
-
+        //Abstraction + Singleton Design Pattern
         customerService = CustomerService.getInstance();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        //String action = request.getParameter("action");
-//	    try {
-//	        if (action == null || action.equals("list")) {
-//
-//	        	listCustomers(request, response);
-//	            
-//	       
-//	        
-//	    } catch (SQLException e) {
-//	        request.setAttribute("errorMessage", e.getMessage());
-//	        request.getRequestDispatcher("/WEB-INF/view/error.jsp").forward(request, response);
-//	    }
         String action = request.getParameter("action");
 
         try {
             if (action == null || "list".equals(action)) {
-                // ── search OR full list ─────────────────────────────
+                // Abstraction
                 String query = request.getParameter("query");
                 List<Customer> customers
                         = (query == null || query.trim().isEmpty())
@@ -86,7 +75,7 @@ public class CustomerController extends HttpServlet {
         String action = request.getParameter("action");
 
         if ("add".equals(action)) {
-
+            // Layered Architecture
             Customer customer = extractCustomer(request);
             HttpSession session = request.getSession();
 
@@ -105,6 +94,7 @@ public class CustomerController extends HttpServlet {
         } else if ("edit".equals(action)) {
             int id = Integer.parseInt(request.getParameter("id"));
 
+             // Encapsulation
             Customer customer = new Customer();
             customer.setId(id);
             customer.setName(request.getParameter("name"));
@@ -123,18 +113,13 @@ public class CustomerController extends HttpServlet {
         }
     }
 
-//	private void listCustomers(HttpServletRequest request, HttpServletResponse response)
-//	        throws SQLException, ServletException, IOException {
-//		
-//	    List<Customer> customer = customerService.getAllCustomers();
-//	    request.setAttribute("customerList", customer);
-//	    request.getRequestDispatcher("viewCustomers.jsp").forward(request, response);
-//	}
+    // Abstraction
     private void showAddForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("addCustomer.jsp").forward(request, response);
     }
 
+    // Encapsulation + Abstraction
     private Customer extractCustomer(HttpServletRequest request) {
 
         CustomerDAO account = new CustomerDAO();
@@ -166,6 +151,7 @@ public class CustomerController extends HttpServlet {
         }
     }
 
+    // Abstraction
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
 

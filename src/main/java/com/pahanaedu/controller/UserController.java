@@ -14,10 +14,12 @@ import java.util.List;
 public class UserController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
+    
+     // Encapsulation
     private UserService userService;
 
     public void init() throws ServletException {
-        userService = UserService.getInstance();
+        userService = UserService.getInstance();  // Singleton Pattern
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -58,6 +60,7 @@ public class UserController extends HttpServlet {
         }
     }
 
+     // Abstraction + MVC
     private void listUsers(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         List<User> users = userService.getAllUsers();
@@ -73,7 +76,7 @@ public class UserController extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        User existingUser = userService.getUserById(id);
+        User existingUser = userService.getUserById(id); // Encapsulation
         request.setAttribute("user", existingUser);
         request.getRequestDispatcher("editUser.jsp").forward(request, response);
     }
@@ -104,10 +107,12 @@ public class UserController extends HttpServlet {
             return;
         }
 
+        
+        // Abstraction + Encapsulation
         User user = new User();
         user.setUsername(username);
         user.setEmail(email);
-        user.setPassword(password);
+        user.setPassword(password); // Encapsulation
         user.setRole(role);
 
         userService.addUser(user);
@@ -148,7 +153,7 @@ public class UserController extends HttpServlet {
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        userService.deleteUser(id);
+        userService.deleteUser(id); // Abstraction
         response.sendRedirect("user?action=list&deleted=true");
     }
 }

@@ -20,11 +20,11 @@ public class BookController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private BookService bookService;
+    private BookService bookService; //Encapsulation
 
     public void init() {
 
-        bookService = BookService.getInstance();
+        bookService = BookService.getInstance(); //Abstraction + Singleton Pattern
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -61,40 +61,16 @@ public class BookController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
 
-//		String action = request.getParameter("action");
-//	    try {
-//	        
-//	    	if (action.equals("add")) {
-//	            
-//	        	Book book = extractBook(request);
-//	            bookService.addBook(book);
-////	            response.sendRedirect("BookController?action=list");
-//	            response.sendRedirect("addBook.jsp");
-//	        
-//	        } else if (action.equals("update")) {
-//	        
-//	        	Book book = extractBook(request);
-//	            book.setId(Integer.parseInt(request.getParameter("id")));
-//	            bookService.updateBook(book);
-//	            response.sendRedirect("BookController?action=list");
-//	        
-//	        }
-//	    } catch (SQLException e) {
-//	        request.setAttribute("errorMessage", e.getMessage());
-//	        request.getRequestDispatcher("/WEB-INF/view/error.jsp").forward(request, response);
-//	    }
         String action = request.getParameter("action");
 
         try {
 
             if ("add".equals(action)) {
-                Book book = extractBook(request);
+                Book book = extractBook(request); //Encapsulation
 
-                // Check for duplicate book with name and language before adding to DB
                 if (bookService.isDuplicateBook(book.getTitle(), book.getLanguage())) {
                     request.setAttribute("error", "Book with same title in same language already exists.");
 
-                    // Retain previously entered values
                     request.setAttribute("book", book);
 
                     request.getRequestDispatcher("addBook.jsp").forward(request, response);

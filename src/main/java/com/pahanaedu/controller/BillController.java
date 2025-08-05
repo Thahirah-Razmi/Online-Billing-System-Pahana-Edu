@@ -17,12 +17,14 @@ import java.util.*;
 @WebServlet("/BillController")
 public class BillController extends HttpServlet {
 
+    // Encapsulation + Singleton Pattern
     private BillService billService;
     private CustomerService customerService;
     private BookService bookService;
 
     @Override
     public void init() {
+        // Singleton Design Pattern
         billService = BillService.getInstance();
         customerService = CustomerService.getInstance();
         bookService = BookService.getInstance();
@@ -37,15 +39,8 @@ public class BillController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         String action = request.getParameter("action");
-//
-//        if (action == null || "list".equals(action)) {
-//            List<Bill> bills = billService.getAllBills();
-//            request.setAttribute("billList", bills);
-//            request.getRequestDispatcher("viewBills.jsp").forward(request, response);
-//            return;
-//          
-//
-//        }
+        
+        // MVC pattern:
         if (action == null || "list".equals(action)) {
 
             String account = request.getParameter("account");
@@ -54,7 +49,7 @@ public class BillController extends HttpServlet {
             String toDate = request.getParameter("to");
 
             List<Bill> bills;
-
+            // Abstraction
             // If any filter is applied, use filtered list
             if ((account != null && !account.trim().isEmpty())
                     || (invoiceNum != null && !invoiceNum.trim().isEmpty())
@@ -75,6 +70,7 @@ public class BillController extends HttpServlet {
 
         if ("add".equals(action)) {
             try {
+                // Abstraction & Encapsulation
                 List<Customer> customers = customerService.getAllCustomers();
                 List<Book> books = bookService.getAllBooks();
                 request.setAttribute("customers", customers);
@@ -91,6 +87,7 @@ public class BillController extends HttpServlet {
             if (idStr != null) {
                 try {
                     int id = Integer.parseInt(idStr);
+                     // Abstraction:
                     boolean deleted = billService.deleteBill(id);
                     if (!deleted) {
                         request.setAttribute("errorMessage", "Failed to delete bill with ID " + id);
@@ -123,10 +120,12 @@ public class BillController extends HttpServlet {
             grandTotal = Double.parseDouble(totalStr);
         } catch (NumberFormatException ignored) {
         }
-
+        
+        // Abstraction
         Customer cust = customerService.getCustomerByAccount(accountNo);
         String customerName = (cust != null) ? cust.getName() : "Unknown";
 
+        // Encapsulation
         Bill bill = new Bill();
         bill.setAccountNumber(accountNo);
         bill.setCustomerName(customerName);
@@ -135,8 +134,6 @@ public class BillController extends HttpServlet {
         bill.setStaffUsername(staffUser);
 
         boolean saved = billService.addBill(bill);
-//        System.out.println("Bill Saved: " + saved);
-//        System.out.println("Generated Bill ID: " + bill.getId());
 
         if (!saved) {
             request.setAttribute("errorMessage", "Failed to save bill.");
@@ -151,7 +148,7 @@ public class BillController extends HttpServlet {
             return;
         }
 
-        // Prepare book details for preview
+        // Prepare book details for preview (MVC pattern)
         List<Map<String, Object>> bookDetails = new ArrayList<>();
 
         for (int i = 1; i <= 4; i++) {
@@ -169,6 +166,7 @@ public class BillController extends HttpServlet {
                     continue;
                 }
 
+                // Abstraction
                 Book book = null;
                 try {
                     book = bookService.getBookById(bookId);
@@ -181,6 +179,7 @@ public class BillController extends HttpServlet {
                     continue;
                 }
 
+                // Encapsulation
                 double unitPrice = book.getPrice();
                 double lineTotal = unitPrice * quantity;
 
