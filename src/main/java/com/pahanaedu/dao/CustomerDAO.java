@@ -6,7 +6,7 @@ import java.util.*;
 
 public class CustomerDAO {
 
-     // Abstraction
+    // Abstraction
     public String generateNextAccountNumber() {
         String prefix = "PAH";
         String nextAccount = prefix + "001";
@@ -29,7 +29,31 @@ public class CustomerDAO {
         return nextAccount;
     }
 
-     // Layered Architecture + Encapsulation
+    public boolean isEmailExists(String email) {
+        String sql = "SELECT id FROM customers WHERE email = ?";
+        try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            return rs.next(); // true if email already exists
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean isTelephoneExists(String telephone) {
+        String sql = "SELECT id FROM customers WHERE telephone = ?";
+        try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, telephone);
+            ResultSet rs = ps.executeQuery();
+            return rs.next(); // true if telephone already exists
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    // Layered Architecture + Encapsulation
     public boolean addCustomer(Customer customer) {
 
         String sql = "INSERT INTO customers (account_number, name, address, telephone, email) VALUES (?, ?, ?, ?, ?)";

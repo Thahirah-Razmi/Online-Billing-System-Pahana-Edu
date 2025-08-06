@@ -25,6 +25,14 @@ public class CustomerService {
         return instance;
     }
 
+    public boolean isEmailExists(String email) {
+        return customerDAO.isEmailExists(email);
+    }
+
+    public boolean isTelephoneExists(String telephone) {
+        return customerDAO.isTelephoneExists(telephone);
+    }
+
     //Abstraction
     public boolean addCustomer(Customer customer) {
         return customerDAO.addCustomer(customer);

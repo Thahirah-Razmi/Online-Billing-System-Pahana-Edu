@@ -78,7 +78,35 @@ public class CustomerController extends HttpServlet {
         if ("add".equals(action)) {
             // Layered Architecture
             Customer customer = extractCustomer(request); //️ Abstraction + Encapsulation
+
+            String telephone = customer.getTelephone();
+            String email = customer.getEmail();
+
+            if (!telephone.matches("\\d{10}")) {
+                request.setAttribute("error", "Invalid telephone format. Must be 10 digits.");
+                request.getRequestDispatcher("addCustomer.jsp").forward(request, response);
+                return;
+            }
+
+            if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+                request.setAttribute("error", "Invalid email format.");
+                request.getRequestDispatcher("addCustomer.jsp").forward(request, response);
+                return;
+            }
+
             HttpSession session = request.getSession();
+
+            if (customerService.isTelephoneExists(customer.getTelephone())) {
+                request.setAttribute("error", "Telephone number already exists.");
+                request.getRequestDispatcher("addCustomer.jsp").forward(request, response);
+                return;
+            }
+
+            if (customerService.isEmailExists(customer.getEmail())) {
+                request.setAttribute("error", "Email already exists.");
+                request.getRequestDispatcher("addCustomer.jsp").forward(request, response);
+                return;
+            }
 
             if (customerService.addCustomer(customer)) {
 
@@ -95,7 +123,7 @@ public class CustomerController extends HttpServlet {
         } else if ("edit".equals(action)) {
             int id = Integer.parseInt(request.getParameter("id"));
 
-             // Encapsulation
+            // Encapsulation
             Customer customer = new Customer();
             customer.setId(id);
             customer.setName(request.getParameter("name"));

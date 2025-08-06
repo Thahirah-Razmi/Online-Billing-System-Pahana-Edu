@@ -40,12 +40,12 @@
 
                         <div class="mb-3">
                             <label for="telephone">Telephone</label>
-                            <input type="text" name="telephone" required pattern="\d{10}" title="Please enter exactly 10 digits">
+                            <input type="text" name="telephone" required pattern="\d{10}" maxlength="10" inputmode="numeric" title="Enter a valid 10-digit telephone number">
                         </div>
 
                         <div class="mb-3">
                             <label for="email">Email</label>
-                            <input type="email" name="email" required>
+                            <input type="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address">
                         </div>
 
                         <button type="submit" >Add Customer</button>
