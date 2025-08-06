@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-.container {
+.container1 {
     flex: 1;
     max-width: 450px;
     margin: 60px auto;
