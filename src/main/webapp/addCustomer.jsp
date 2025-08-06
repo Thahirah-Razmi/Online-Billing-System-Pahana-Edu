@@ -18,12 +18,12 @@
                 <div class="card-body">
 
                     <% String message = (String) session.getAttribute("message");
-          if (message != null) {%>
+                        if (message != null) {%>
                     <div class="alert-success"><%= message%></div>
                     <%   session.removeAttribute("message");
                         }
                         String error = (String) request.getAttribute("error");
-          if (error != null) {%>
+                        if (error != null) {%>
                     <div class="alert-danger"><%= error%></div>
                     <% }%>
 
@@ -53,6 +53,9 @@
 
                 </div>
             </div>
+        </div>
+        <div>
+            <%@ include file="footer.jsp" %>
         </div>
     </body>
 </html>

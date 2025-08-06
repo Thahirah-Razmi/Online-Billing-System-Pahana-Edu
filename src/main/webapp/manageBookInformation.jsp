@@ -18,5 +18,8 @@
                 <a href="BookController?action=list" class="dashboard-btn view-book">View All Books</a>
             </div>
         </div>
+        <div>
+            <%@ include file="footer.jsp" %>
+        </div>
     </body>
 </html>

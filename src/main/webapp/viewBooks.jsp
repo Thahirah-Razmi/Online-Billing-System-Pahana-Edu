@@ -33,7 +33,7 @@
 
             <form method="get" action="allBooks" class="search-form">
                 <div class="form-group">
-                    <input type="text" name="query" placeholder="Search by title, author, category, language">
+                    <input type="text" name="query" placeholder="Search by title, author, category, and language">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="yellow-button">Search</button>

@@ -11,11 +11,15 @@
     </head>
     <body>
         <div class="panel-container">
-            <div class="panel-title">Manage Customer Information</div>
+            <div class="panel-title">Manage User Information</div>
 
             <div class="button-container">
                 <a href="addUser.jsp" class="dashboard-btn add-user">Add User</a>
                 <a href="user?action=list" class="dashboard-btn view-user">View All Users</a>
             </div>
+        </div>
+        <div>
+            <%@ include file="footer.jsp" %>
+        </div>
     </body>
 </html>

@@ -38,7 +38,7 @@
 
             <form method="get" action="CustomerController?action=update" class="search-form">
                 <div class="form-group">
-                    <input type="text" name="query" placeholder="Search by ">
+                    <input type="text" name="query" placeholder="Search by account number, name, address, and email">
                 </div>
 
                 <div class="form-group">
@@ -99,9 +99,9 @@
                             <a href="CustomerController?action=delete&id=<%= c.getId()%>" class="btn-delete"
                                onclick="return confirm('Are you sure you want to delete this customer?');">Delete</a>
                         </td>
-                        
+
                         <% }
-                } %>
+                            } %>
                     </tr>
                     <%
                         }
@@ -125,6 +125,9 @@
                     <button type="submit" class="blue-button">View All Customers</button>
                 </form>
             </div>
+        </div>
+        <div>
+            <%@ include file="footer.jsp" %>
         </div>
     </body>
 </html>

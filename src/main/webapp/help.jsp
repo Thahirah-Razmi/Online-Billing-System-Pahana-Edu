@@ -4,138 +4,138 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Help - User Roles and Functionalities</title>
+        <title>Help Section</title>
         <link rel="stylesheet" type="text/css" href="css/Header_Style.css">
         <style>
-            .help-table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 20px;
-                background-color: #ffffff;
+            body {
+                background-color: #F5ECD9;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .container-help {
+                width: 70%;
+                max-width: 800px;
+                margin: 100px auto;
+                padding: 30px;
+                background-color: white;
                 border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                box-shadow: 0 0 15px rgba(0,0,0,0.1);
             }
-
-            .help-table th,
-            .help-table td {
-                padding: 12px 15px;
+            h1 {
                 text-align: center;
-                border-bottom: 1px solid #ddd;
-                font-size: 15px;
+                color: #F5ECD9;
+                background-color: #4B2E1E;
+                padding: 15px 20px;
+                border-radius: 8px;
+                margin-bottom: 30px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             }
-
-            .help-table th {
-                background-color: #007bff;
-                color: white;
+            .help-item {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 1px dashed #C2B280;
             }
-
-            .help-table tr:hover {
-                background-color: #f1f1f1;
-            }
-
-            .main-container h2 {
+            .help-item h3 {
+                color: #4B2E1E;
                 margin-bottom: 10px;
-                font-size: 28px;
-                color: #333;
             }
-
-            .main-container p {
+            .help-item p {
+                color: #4B2E1E;
+                line-height: 1.6;
+                margin: 8px 0;
+            }
+            .back-button {
+                display: block;
+                width: 150px;
+                margin: 30px auto 0;
+                padding: 10px;
+                background-color: #708238;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
                 font-size: 16px;
-                color: #555;
+            }
+            .back-button:hover {
+                background-color: #566b2f;
             }
 
-            .yes {
-                color: green;
-                font-weight: bold;
+            .footer {
+                text-align: center;
+                padding: 2px 0px;
+                background-color: #4B2E1E;
+                font-size: 14px;
+                color: #F5ECD9;
+                margin-top: 100px;
+                line-height: 1;
             }
 
-            .no {
-                color: red;
-                font-weight: bold;
+            .footer-line {
+                border: none;
+                height: 1px;
+                background-color: #C2B280;
+                margin-bottom: 8px;
+            }
+
+            .footer a {
+                color: #D36B43;
+                text-decoration: none;
+                margin: 0 5px;
+            }
+
+            .footer a:hover {
+                text-decoration: underline;
             }
         </style>
     </head>
     <body>
+        <div class="container-help">
+            <h1>Pahana Edu Billing System - Help</h1>
 
-        <div class="main-container">
-            <h2>User Roles and Functionalities</h2>
-            <p>This table shows permissions for each user role.</p>
+            <div class="help-item">
+                <h3>1. How to Login</h3>
+                <p>Enter your username and password on the login page. Contact admin if you forget credentials.</p>
+            </div>
 
-            <table class="help-table">
-                <thead>
-                    <tr>
-                        <th>User Role</th>
-                        <th>Add User</th>
-                        <th>Edit User</th>
-                        <th>Delete User</th>
-                        <th>View Users</th>
-                        <th>Add Book</th>
-                        <th>Edit Book</th>
-                        <th>Delete Book</th>
-                        <th>View Books</th>
-                        <th>Add Customer</th>
-                        <th>Edit Customer</th>
-                        <th>Delete Customer</th>
-                        <th>View Customers</th>
-                        <th>Add Bill</th>
-                        <th>View Sales</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Admin</strong></td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Customer Manager</strong></td>
-                        <td class="no">No</td>
-                        <td class="no">No</td>
-                        <td class="no">No</td>
-                        <td class="no">No</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="no">No</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="no">No</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cashier</strong></td>
-                        <td class="no">No</td>
-                        <td class="no">No</td>
-                        <td class="no">No</td>
-                        <td class="no">No</td>
-                        <td class="yes">Yes</td>
-                        <td class="no">No</td>
-                        <td class="no">No</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="no">No</td>
-                        <td class="no">No</td>
-                        <td class="yes">Yes</td>
-                        <td class="yes">Yes</td>
-                        <td class="no">No</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="help-item">
+                <h3>2. Managing User Information</h3>
+                <p><strong>Add Customer:</strong> Go to Dashboard > Managing User Information > Add User.</p>
+                <p><strong>Edit Customer:</strong> Go to Dashboard > Managing User Information > View All Users > Edit.</p>
+                <p><strong>Delete Customer:</strong> Go to Dashboard > Managing User Information > View All Users > Delete.</p>
+            </div>
+
+            <div class="help-item">
+                <h3>3. Managing Customer Information</h3>
+                <p><strong>Add Customer:</strong> Go to Dashboard > Managing Customer Information > Add Customer.</p>
+                <p><strong>View All Customers:</strong> Go to Dashboard > Managing Customer Information > View All Customers > Search for a customer.</p>
+                <p><strong>Edit Customer:</strong> Go to Dashboard > Managing Customer Information > View All Customers > Search for a customer > Edit.</p>
+                <p><strong>Delete Customer:</strong> Go to Dashboard > Managing Customer Information > View All Customers > Search for a customer > Delete.</p>
+            </div>
+
+            <div class="help-item">
+                <h3>4. Managing Book Information</h3>
+                <p><strong>Add Book:</strong> Go to Dashboard > Managing Book Information > Add Book.</p>
+                <p><strong>View All Books:</strong> Go to Dashboard > Managing Book Information > View All Books > Search for a book.</p>
+                <p><strong>Edit Customer:</strong> Go to Dashboard > Managing Book Information > View All Books > Search for a book > Edit.</p>
+                <p><strong>Delete Customer:</strong> Go to Dashboard > Managing Book Information > View All Books > Search for a book > Delete.</p>
+            </div>
+
+            <div class="help-item">
+                <h3>5. Manage Bill Information</h3>
+                <p><strong>Calculate Bill:</strong> Go to Dashboard > Managing Bill Information > Calculate Bill.</p>
+                <p><strong>View All Sales:</strong> Go to Dashboard > Managing Bill Information > View All Sales > Search for a bill by filtering.</p>
+                <p><strong>Delete Bill:</strong> Go to Dashboard > Managing Bill Information > View All Sales > Search for a bill > Delete.</p>
+            </div>
+
+            <div class="help-item">
+                <h3>6. Troubleshooting</h3>
+                <p><strong>Error messages:</strong> Ensure all fields are filled correctly.</p>
+                <p><strong>Contact Support:</strong> Email: support@pahanaedu.lk</p>
+            </div>
+        </div>
+        <div>
+            <%@ include file="footer.jsp" %>
         </div>
     </body>
 </html>

@@ -18,5 +18,8 @@
                 <a href="CustomerController?action=list" class="dashboard-btn view-customer">View All Customers</a>
             </div>
         </div>
+        <div>
+            <%@ include file="footer.jsp" %>
+        </div>
     </body>
 </html>
