@@ -226,3 +226,32 @@ button[type="submit"]:hover {
     border-radius: 6px;
     text-align: center;
 }
+
+.footer {
+    text-align: center;
+    padding: 10px 0px;
+    background-color: #4B2E1E;
+    font-size: 14px;
+    color: #F5ECD9;
+    margin-top: auto;
+    line-height: 1;
+    width: 100%;
+}
+
+.footer-line {
+    border: none;
+    height: 1px;
+    background-color: #C2B280;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    color: #D36B43;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+

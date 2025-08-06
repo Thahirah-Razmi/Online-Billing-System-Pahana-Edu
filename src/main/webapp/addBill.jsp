@@ -83,6 +83,10 @@
             </form>
         </div>
 
+        <div>
+            <%@ include file="footer.jsp" %>
+        </div>
+
         <script>
             function formatNumber(num) {
                 return parseFloat(num).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
@@ -152,9 +156,5 @@
                 q.addEventListener('input', updateItemsField));
 
         </script>
-
-        <div>
-            <%@ include file="footer.jsp" %>
-        </div>
     </body>
 </html>

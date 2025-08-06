@@ -5,9 +5,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container1 {
+.container {
+    flex: 1;
     max-width: 450px;
     margin: 60px auto;
     margin-top: 80px;
@@ -99,4 +103,32 @@ button[type="submit"]:hover {
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0px;
+    background-color: #4B2E1E;
+    font-size: 14px;
+    color: #F5ECD9;
+    margin-top: auto;
+    line-height: 1;
+    width: 100%;
+}
+
+.footer-line {
+    border: none;
+    height: 1px;
+    background-color: #C2B280;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    color: #D36B43;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
