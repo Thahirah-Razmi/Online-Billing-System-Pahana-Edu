@@ -30,6 +30,14 @@ public class UserService {
         userDAO.addUser(user);
     }
 
+    public boolean isEmailExists(String email) throws SQLException {
+        return userDAO.isEmailExists(email);
+    }
+
+    public boolean isUsernameExists(String username) throws SQLException {
+        return userDAO.isUsernameExists(username);
+    }
+
     //Abstraction
     public boolean isUsernameOrEmailExists(String username, String email) throws SQLException {
         return userDAO.isUsernameOrEmailExists(username, email);

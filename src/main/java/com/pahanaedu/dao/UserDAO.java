@@ -5,7 +5,6 @@ import java.sql.*;
 import java.util.*;
 
 // DAO Design Pattern + Layered Architecture + Abstraction + Encapsulation 
-
 public class UserDAO {
 
     // Abstraction
@@ -17,6 +16,24 @@ public class UserDAO {
             stmt.setString(3, user.getPassword());
             stmt.setString(4, user.getRole());
             stmt.executeUpdate();
+        }
+    }
+
+    public boolean isEmailExists(String email) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM users WHERE email = ?";
+        try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next() && rs.getInt(1) > 0;
+        }
+    }
+
+    public boolean isUsernameExists(String username) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM users WHERE username = ?";
+        try (Connection conn = DBConnectionFactory.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next() && rs.getInt(1) > 0;
         }
     }
 

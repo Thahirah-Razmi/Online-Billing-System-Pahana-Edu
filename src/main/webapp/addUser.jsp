@@ -96,7 +96,11 @@
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" value="<%= request.getAttribute("email") != null ? request.getAttribute("email") : ""%>" required />
+                    <input type="email" id="email" name="email"
+                           value="<%= request.getAttribute("email") != null ? request.getAttribute("email") : ""%>"
+                           required
+                           pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                           title="Enter a valid email address (e.g. user@example.com)" />
                 </div>
 
                 <div class="form-group">

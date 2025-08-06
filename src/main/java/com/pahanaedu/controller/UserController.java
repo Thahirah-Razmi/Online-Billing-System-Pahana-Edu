@@ -14,11 +14,10 @@ import java.util.List;
 public class UserController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    
-     // Encapsulation
+
+    // Encapsulation
     private UserService userService;
 
-    
     // Singleton Pattern + Abstraction
     public void init() throws ServletException {
         userService = UserService.getInstance();  // Singleton Pattern
@@ -63,7 +62,7 @@ public class UserController extends HttpServlet {
         }
     }
 
-     // Abstraction + MVC Pattern
+    // Abstraction + MVC Pattern
     private void listUsers(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         List<User> users = userService.getAllUsers(); // Abstraction
@@ -94,25 +93,29 @@ public class UserController extends HttpServlet {
         String confirm = request.getParameter("confirm");
         String role = request.getParameter("role");
 
+        request.setAttribute("username", username);
+        request.setAttribute("email", email);
+        request.setAttribute("role", role);
+
+        String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
+        if (!email.matches(emailRegex)) {
+            request.setAttribute("error", "Invalid email format.");
+            request.getRequestDispatcher("addUser.jsp").forward(request, response);
+            return;
+        }
+
         if (!password.equals(confirm)) {
-            request.setAttribute("error", "Passwords do not match.");
-            request.setAttribute("username", username);
-            request.setAttribute("email", email);
-            request.setAttribute("role", role);
+            request.setAttribute("error", "Passwords Don't Match.");
             request.getRequestDispatcher("addUser.jsp").forward(request, response);
             return;
         }
 
         if (userService.isUsernameOrEmailExists(username, email)) {
-            request.setAttribute("error", "Username or Email already exists.");
-            request.setAttribute("username", username);
-            request.setAttribute("email", email);
-            request.setAttribute("role", role);
+            request.setAttribute("error", "Username or Email Already Exists.");
             request.getRequestDispatcher("addUser.jsp").forward(request, response);
             return;
         }
 
-        
         // Abstraction + Encapsulation
         User user = new User();
         user.setUsername(username);
