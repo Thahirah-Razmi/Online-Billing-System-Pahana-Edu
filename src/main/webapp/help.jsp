@@ -94,19 +94,19 @@
             <h1>Pahana Edu Billing System - Help</h1>
 
             <div class="help-item">
-                <h3>1. How to Login</h3>
+                <h3>1. How to Login <span style="font-size: 14px; color: #708238;">(Admin & Staff)</span> </h3>
                 <p>Enter your username and password on the login page. Contact admin if you forget credentials.</p>
             </div>
 
             <div class="help-item">
-                <h3>2. Managing User Information</h3>
+                <h3>2. Managing User Information <span style="font-size: 14px; color: #D36B43;">(Admin Only)</span> </h3>
                 <p><strong>Add Customer:</strong> Go to Dashboard > Managing User Information > Add User.</p>
                 <p><strong>Edit Customer:</strong> Go to Dashboard > Managing User Information > View All Users > Edit.</p>
                 <p><strong>Delete Customer:</strong> Go to Dashboard > Managing User Information > View All Users > Delete.</p>
             </div>
 
             <div class="help-item">
-                <h3>3. Managing Customer Information</h3>
+                <h3>3. Managing Customer Information <span style="font-size: 14px; color: #708238;">(Admin & Staff)</span> </h3>
                 <p><strong>Add Customer:</strong> Go to Dashboard > Managing Customer Information > Add Customer.</p>
                 <p><strong>View All Customers:</strong> Go to Dashboard > Managing Customer Information > View All Customers > Search for a customer.</p>
                 <p><strong>Edit Customer:</strong> Go to Dashboard > Managing Customer Information > View All Customers > Search for a customer > Edit.</p>
@@ -114,7 +114,7 @@
             </div>
 
             <div class="help-item">
-                <h3>4. Managing Book Information</h3>
+                <h3>4. Managing Book Information <span style="font-size: 14px; color: #708238;">(Admin & Staff)</span> </h3>
                 <p><strong>Add Book:</strong> Go to Dashboard > Managing Book Information > Add Book.</p>
                 <p><strong>View All Books:</strong> Go to Dashboard > Managing Book Information > View All Books > Search for a book.</p>
                 <p><strong>Edit Customer:</strong> Go to Dashboard > Managing Book Information > View All Books > Search for a book > Edit.</p>
@@ -122,14 +122,14 @@
             </div>
 
             <div class="help-item">
-                <h3>5. Manage Bill Information</h3>
+                <h3>5. Manage Bill Information <span style="font-size: 14px; color: #708238;">(Admin & Staff)</span> </h3>
                 <p><strong>Calculate Bill:</strong> Go to Dashboard > Managing Bill Information > Calculate Bill.</p>
                 <p><strong>View All Sales:</strong> Go to Dashboard > Managing Bill Information > View All Sales > Search for a bill by filtering.</p>
                 <p><strong>Delete Bill:</strong> Go to Dashboard > Managing Bill Information > View All Sales > Search for a bill > Delete.</p>
             </div>
 
             <div class="help-item">
-                <h3>6. Troubleshooting</h3>
+                <h3>6. Troubleshooting <span style="font-size: 14px; color: #708238;">(Admin & Staff)</span> </h3>
                 <p><strong>Error messages:</strong> Ensure all fields are filled correctly.</p>
                 <p><strong>Contact Support:</strong> Email: support@pahanaedu.lk</p>
             </div>
