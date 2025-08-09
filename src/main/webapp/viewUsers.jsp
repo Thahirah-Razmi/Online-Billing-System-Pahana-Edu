@@ -87,7 +87,7 @@
         </header>
 
         <div class="container">
-            <h2>Users List of Book Shop</h2>
+            <h2>List of Users in the Bookshop</h2>
             <div class="table-responsive">
                 <table>
                     <thead>

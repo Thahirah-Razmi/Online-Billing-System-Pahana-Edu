@@ -68,7 +68,7 @@
         </header>
 
         <div class="container-form">
-            <h2>Staff User Registration</h2>
+            <h2>User Registration Form</h2>
 
             <%
                 String message = (String) session.getAttribute("message");
