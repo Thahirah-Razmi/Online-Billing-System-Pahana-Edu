@@ -20,7 +20,7 @@
         <style>
             body {
                 font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-                background-color: #F5ECD9; /* beige */
+                background-color: #F5ECD9;
                 margin: 0;
                 padding: 20px;
             }
@@ -35,8 +35,8 @@
             }
             .title {
                 text-align: center;
-                background-color: #4B2E1E; /* dark brown */
-                color: #F5ECD9; /* beige text */
+                background-color: #4B2E1E; 
+                color: #F5ECD9; 
                 padding: 15px;
                 border-radius: 8px;
                 margin-bottom: 20px;
@@ -51,30 +51,30 @@
                 box-shadow: 0 0 10px rgba(0,0,0,0.05);
             }
             table, th, td {
-                border: 1px solid #C2B280; /* beige brown border */
+                border: 1px solid #C2B280; 
             }
             th {
-                background-color: #4B2E1E; /* dark brown */
-                color: #F5ECD9; /* beige */
+                background-color: #4B2E1E; 
+                color: #F5ECD9;
                 padding: 12px 15px;
                 text-align: center;
             }
             td {
                 padding: 10px 15px;
-                color: #4B2E1E; /* dark brown text */
+                color: #4B2E1E; 
                 text-align: center;
             }
             tfoot td {
                 font-weight: bold;
                 text-align: right;
-                background-color: #F5ECD9; /* beige */
+                background-color: #F5ECD9; 
                 color: #4B2E1E;
             }
             .text-center {
                 text-align: center;
             }
             .btn-print {
-                background-color: #708238; /* olive green */
+                background-color: #708238; 
                 color: white;
                 padding: 10px 25px;
                 border: none;

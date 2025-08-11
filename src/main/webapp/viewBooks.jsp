@@ -41,8 +41,6 @@
             </form>
 
             <%
-                //  String admin = (String) session.getAttribute("admin");
-                //  String role = (String) session.getAttribute("role");
                 if ("admin".equalsIgnoreCase(admin)) {
             %>
             

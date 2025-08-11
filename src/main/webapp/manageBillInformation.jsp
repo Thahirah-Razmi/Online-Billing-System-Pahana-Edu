@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manage Bill</title>
+        <title>Manage Bill Information</title>
         <link rel="stylesheet" href="css/Admin_Dashboard_Style.css" />
         <link rel="stylesheet" href="css/Staff_Dashboard_Style.css">
         <link rel="stylesheet" href="css/Style.css" />
