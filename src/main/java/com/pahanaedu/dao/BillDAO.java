@@ -87,7 +87,7 @@ public class BillDAO {
                     b.setCustomerName(rs.getString("customer_name"));
                     b.setBooksPurchased(rs.getString("books_purchased"));
                     b.setTotalAmount(rs.getDouble("total_amount"));
-                    b.setBillingTime(rs.getTimestamp("billing_date"));
+                    b.setBillingTime(rs.getTimestamp("bill_date"));
                     b.setStaffUsername(rs.getString("generated_by"));
                     return b; //Abstraction + Encapsulation
                 }

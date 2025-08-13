@@ -15,7 +15,7 @@
 
             <div class="button-container">
                 <a href="CustomerController?action=add" class="dashboard-btn add-customer">Add Customer</a>
-                <a href="CustomerController?action=list" class="dashboard-btn view-customer">View All Customers</a>
+                <a href="CustomerController?action=list" class="dashboard-btn add-customer">View All Customers</a>
             </div>
         </div>
         <div>

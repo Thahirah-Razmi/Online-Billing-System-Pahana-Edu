@@ -80,8 +80,8 @@
             <div class="button-container">
                 <a href="manageUserInformation.jsp" class="dashboard-btn add-user">Manage User Information</a>
                 <a href="manageCustomerInformation.jsp" class="dashboard-btn add-customer">Manage Customer Information</a>
-                <a href="manageBookInformation.jsp" class="dashboard-btn add-book">Manage Book Information</a>
-                <a href="manageBillInformation.jsp" class="dashboard-btn add-bill">Manage Bill Information</a>
+                <a href="manageBookInformation.jsp" class="dashboard-btn add-customer">Manage Book Information</a>
+                <a href="manageBillInformation.jsp" class="dashboard-btn add-user">Manage Bill Information</a>
             </div>
         </div>
         <div>

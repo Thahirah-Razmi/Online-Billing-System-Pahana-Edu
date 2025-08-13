@@ -15,7 +15,7 @@
 
             <div class="button-container">
                 <a href="addUser.jsp" class="dashboard-btn add-user">Add User</a>
-                <a href="user?action=list" class="dashboard-btn view-user">View All Users</a>
+                <a href="user?action=list" class="dashboard-btn add-user">View All Users</a>
             </div>
         </div>
         <div>

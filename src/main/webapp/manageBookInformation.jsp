@@ -14,8 +14,8 @@
             <div class="panel-title">Manage Book Information</div>
 
             <div class="button-container">
-                <a href="BookController?action=add" class="dashboard-btn add-book">Add Book</a>
-                <a href="BookController?action=list" class="dashboard-btn view-book">View All Books</a>
+                <a href="BookController?action=add" class="dashboard-btn add-customer">Add Book</a>
+                <a href="BookController?action=list" class="dashboard-btn add-customer">View All Books</a>
             </div>
         </div>
         <div>

@@ -23,6 +23,38 @@ body {
     font-size: 32px;
 }
 
+.panel-container {
+    max-width: 600px;
+    margin: 120px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.panel-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #4B2E1E;
+}
+
+.panel-container form {
+    margin-bottom: 20px;
+}
+
+.panel-container button {
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
 .main-container {
     max-width: 800px;
     margin: 50px auto;
