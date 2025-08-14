@@ -22,6 +22,7 @@ public class Customer {
         this.address = address;
         this.telephone = telephone;
         this.email = email;
+        this.createdAt = createdAt;
     }
 
     public int getId() {
