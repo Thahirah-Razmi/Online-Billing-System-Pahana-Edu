@@ -78,7 +78,7 @@
             </nav>
         </header>
 
-        <div class="container-login">
+        <div class="container-login" style="margin-top:100px;">
             <h2>Update User</h2>
             <form action="user?action=update" method="post">
                 <input type="hidden" name="id" value="<%= u.getId()%>">

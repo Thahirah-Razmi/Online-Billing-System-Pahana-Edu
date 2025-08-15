@@ -13,7 +13,7 @@
         <div class="container">
             <h3 class="title">Create New Bill</h3>
 
-            <form method="post" action="BillController" onsubmit="updateItemsField()">
+            <form method="post" action="BillController" onsubmit="return validateBillForm()">
 
                 <div class="form-group">
                     <label for="customer">Select Customer</label>
@@ -88,6 +88,27 @@
         </div>
 
         <script>
+            function validateBillForm() {
+                let hasBook = false;
+
+                document.querySelectorAll('.row').forEach(row => {
+                    const sel = row.querySelector('.book-select');
+                    const qty = row.querySelector('.quantity-input');
+
+                    if (sel && sel.value !== "" && qty && parseInt(qty.value) > 0) {
+                        hasBook = true;
+                    }
+                });
+
+                if (!hasBook) {
+                    alert("Please select at least one book with quantity before generating the bill.");
+                    return false; 
+                }
+
+                updateItemsField(); 
+                return true; 
+            }
+
             function formatNumber(num) {
                 return parseFloat(num).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
             }
