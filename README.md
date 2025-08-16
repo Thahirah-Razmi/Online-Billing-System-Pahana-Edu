@@ -80,8 +80,55 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
 8. **Manage Customer Information**
 
-<img width="975" height="504" alt="image" src="https://github.com/user-attachments/assets/0cd93905-2242-4b01-b363-f38b794753ef" />
+<img width="975" height="504" alt="image" src="https://github.com/user-attachments/assets/3d1f8cff-1ceb-484e-8a52-9d4c858bf72b" />
 
+9. **Add Customer**
 
+<img width="975" height="597" alt="image" src="https://github.com/user-attachments/assets/2d603c5c-d8a9-4927-8aa6-af243cdeea2a" />
 
+10. **View All Customers**
+
+<img width="976" height="1113" alt="image" src="https://github.com/user-attachments/assets/c5782ac2-aac4-4078-b490-91f991a3d020" />
+
+11. **Edit Customer**
+
+<img width="975" height="634" alt="image" src="https://github.com/user-attachments/assets/069fce96-daee-429e-9bea-811d67b14be2" />
+
+12. **Manage Book Information**
+
+<img width="975" height="502" alt="image" src="https://github.com/user-attachments/assets/c88a2899-29b2-4f32-9a1f-1de80305fd6d" />
+
+13. **Add Book**
+
+<img width="975" height="665" alt="image" src="https://github.com/user-attachments/assets/caf12042-3a8f-411b-b05c-c8c11ebee887" />
+
+14. **View All Books**
+
+<img width="975" height="853" alt="image" src="https://github.com/user-attachments/assets/3350ebf4-7a84-48eb-af7c-cc29b19538c6" />
+
+14. **Edit Book**
+
+<img width="975" height="705" alt="image" src="https://github.com/user-attachments/assets/ce4138b8-c60d-42cb-b24b-59176e87c866" />
+
+ 15. **Manage Bill Information**
+
+<img width="975" height="503" alt="image" src="https://github.com/user-attachments/assets/ea00d762-499d-464c-a44e-8f32e5fdb218" />
+
+16. **Calculate Bill**
+
+<img width="975" height="704" alt="image" src="https://github.com/user-attachments/assets/50ae1602-e444-4711-9620-c98cc7feedfa" />
+
+17. **Bill Preview**
+
+<img width="975" height="510" alt="image" src="https://github.com/user-attachments/assets/d4a3e425-1087-422a-8bd1-b850b7114337" />
+
+<img width="975" height="462" alt="image" src="https://github.com/user-attachments/assets/ae763b6b-f5ec-4dec-b6d3-c2858493bec3" />
+
+18. **View All Sales**
+
+<img width="975" height="859" alt="image" src="https://github.com/user-attachments/assets/cc387692-f197-4749-8f4b-b25549157325" />
+
+19. **Help Section**
+
+<img width="980" height="1101" alt="image" src="https://github.com/user-attachments/assets/ffaa8fec-9591-4be1-a8c0-33a09d03def0" />
 
