@@ -50,7 +50,8 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
 1. **Login Page**
 
-![image](<img width="975" height="516" alt="image" src="https://github.com/user-attachments/assets/1582911e-21d3-4a27-bf4b-66fd04d88d8f" />)
+![image](<img width="975" height="516" alt="image" src="https://github.com/user-attachments/assets/da4659a6-b30a-496f-8794-a4d61bc899a0" />
+)
 
 
 
