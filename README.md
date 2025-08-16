@@ -213,7 +213,9 @@ Follow these steps to run the **Pahana Edu Online Billing System** locally on yo
 **3. Build and Deploy**
 
 Open the project in NetBeans IDE.
+
 Right-click the project → Clean and Build.
+
 Right-click → Deploy to Apache Tomcat 9.
 
 **4. Access the Application**
