@@ -198,12 +198,16 @@ Follow these steps to run the **Pahana Edu Online Billing System** locally on yo
 
 - Open phpMyAdmin or MySQL console.
 - Create a new database:
+- 
 ```CREATE DATABASE online_billing_system_pahana_edu;```
+
 - Import the provided SQL script online_billing_system_pahana_edu.sql (located in /database folder) to create tables and seed initial data.
 - Update the database connection in DBConnection.java:
 
 ```private static final String DB_URL = "jdbc:mysql://localhost:3306/online_billing_system_pahana_edu";```
+
 ```private static final String DB_USER = "root";```
+
 ```private static final String DB_PASSWORD = "your_password";```
 
 **3. Build and Deploy**
@@ -215,6 +219,7 @@ Right-click → Deploy to Apache Tomcat 9.
 **4. Access the Application**
 
 Open your browser and go to:
+
 http://localhost:8081/Online-Billing-System-Pahana-Edu/
 
 Log in using the default credentials (provided in SQL seed):
