@@ -9,25 +9,69 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 1. **User Authentication**
    - Secure login system using username and password.
    - Session-based authentication.
+   - Role-based access: Admin and Staff.
 
-2. **Customer Account Management**
+2. **Admin Dashboard Functionalities**
+
+Admins have full access to all system features:
+
+**Manage User Information**
+   - Add new users with username, email, password, and role.
+   - View all users.
+   - Edit or delete existing user information.
+
+**Manage Customer Information**
    - Add new customers with account number, name, address, telephone, and email.
-   - Edit and update existing customer information.
    - View detailed account information.
+   - Search customers by account number, name, address, or email.
+   - Edit or delete existing customer information.
 
-3. **Book Management**
-   - Add, update, or delete books.
+**Manage Book Information**
+   - Add new books with title, category, author, language, and price.
+   - View all books.
+   - Search books by title, category, author, or language.
+   - Edit or delete existing book information.
 
-4. **Billing System**
-   - Calculate bill amounts based on units consumed.
-   - Generate and print invoices.
-   - Billing associated with logged-in user (staff/admin).
+**Manage Bill Information**
+   - Calculate bills, generate and print invoices.
+   - View all sales records.
+   - Filter by customer account number, invoice number, or date.
+   - Delete bills.
 
-5. **Help Section**
+**Help Section**
    - Guidelines and tips for new users on how to use the system.
 
-6. **Exit System**
+**Logout**
    - Logout and end session securely.
+
+2. **Staff Dashboard Functionalities**
+
+Staff (Manager and Cashier) have restricted access:
+
+**Manage Customer Information**
+   - Add new customers with account number, name, address, telephone, and email.
+   - View detailed account information.
+   - Search customers by account number, name, address, or email.
+   - Edit existing customer information.
+
+**Manage Book Information**
+   - Add new books with title, category, author, language, and price.
+   - View all books.
+   - Search books by title, category, author, or language.
+   - Edit existing book information.
+
+**Manage Bill Information**
+   - Calculate bills, generate and print invoices.
+   - View all sales records.
+   - Filter by customer account number, invoice number, or date.
+
+**Help Section**
+   - Guidelines and tips for new users on how to use the system.
+
+**Logout**
+   - Logout and end session securely.
+
+**⚠️ Note: Staff do not have access to manage user accounts.**
 
 ---
 
