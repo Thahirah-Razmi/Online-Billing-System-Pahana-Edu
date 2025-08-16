@@ -198,7 +198,7 @@ Follow these steps to run the **Pahana Edu Online Billing System** locally on yo
 
 - Open phpMyAdmin or MySQL console.
 - Create a new database:
-- 
+  
 ```CREATE DATABASE online_billing_system_pahana_edu;```
 
 - Import the provided SQL script online_billing_system_pahana_edu.sql (located in /database folder) to create tables and seed initial data.
