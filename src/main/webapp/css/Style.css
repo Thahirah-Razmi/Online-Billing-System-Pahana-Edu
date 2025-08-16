@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+body {
+    background-color: #F5ECD9;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: auto;
+    max-width: 70%;
+    margin: 180px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.container-login {
+    width: 50%;
+    min-width: 200px;
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    align-items: center;
+    flex: 1;
+}
+
+.container-login form input[type="text"],
+.container-login form input[type="password"],
+.container-login form input[type="email"],
+.container-login form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C2B280;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.container-login form button {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 10px 20px;
+    background-color: #4B2E1E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container-login form button:hover {
+    background-color: #708238;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-form {
+    width: 90%;
+    max-width: 500px;
+    margin: 120px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.container form .form-group {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.container form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #4B2E1E;
+    text-align: center;
+}
+
+.container form input[type="text"],
+.container form input[type="password"],
+.container form input[type="email"],
+.container form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C2B280;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.container form button {
+    max-width: 320px;
+}
+
+.blue-button {
+    background-color: #D8A48F;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto;
+}
+
+.blue-button:hover {
+    background-color: #C08E7E;
+}
+
+h2 {
+    text-align: center;
+    color: #F5ECD9;
+    background-color: #4B2E1E;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #4B2E1E;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C2B280;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+button {
+    width: auto;
+    padding: 12px;
+    background-color: #708238;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #566b2f;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-edit, .btn-delete {
+    display: inline-block;
+    text-align: center;
+}
+
+.wide-button {
+    width: 250px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #708238;
+    color: white;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.container-table {
+    width: auto;
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+table {
+    width: auto;
+    min-width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table thead {
+    background-color: #4B2E1E;
+    color: white;
+}
+
+table thead th {
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:hover {
+    background-color: #F5ECD9;
+}
+
+table tbody td {
+    padding: 10px 15px;
+    text-align: center;
+    color: #4B2E1E;
+}
+
+table th, table td {
+    border: 1px solid #C2B280;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.btn-edit {
+    background-color: #C2B280;
+    color: #212529;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 2px;
+}
+
+.btn-edit:hover {
+    background-color: #A1866F;
+}
+
+.btn-delete {
+    background-color: #A23E48;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 2px;
+}
+
+.btn-delete:hover {
+    background-color: #7d2b34;
+}
+
+.yellow-button {
+    background-color: #D8A48F;
+    color: black;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 2px;
+}
+
+.yellow-button:hover {
+    background-color: #C08E7E;
+}
+
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0px;
+    background-color: #4B2E1E;
+    font-size: 14px;
+    color: #F5ECD9;
+    margin-top: auto;
+    line-height: 1;
+    width: 100%;
+}
+
+.footer-line {
+    border: none;
+    height: 1px;
+    background-color: #C2B280;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    color: #D36B43;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
