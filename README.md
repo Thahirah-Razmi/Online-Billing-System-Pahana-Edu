@@ -89,6 +89,80 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
 ---
 
+## 🚀 Getting Started (Installation)
+
+Follow these steps to run the **Pahana Edu Online Billing System** locally on your machine:
+
+### **Prerequisites**
+- **Java JDK 8 or higher**  
+- **Apache Tomcat 9** (or compatible Java EE server)  
+- **NetBeans IDE** (or any Java EE compatible IDE)  
+- **MySQL Server** (with phpMyAdmin optional for database management)  
+- **Maven** (for build and dependency management)
+
+---
+
+### **1. Clone the Repository**
+```git clone https://github.com/Thahirah-Razmi/Online-Billing-System-Pahana-Edu.git```
+
+```cd Online-Billing-System-Pahana-Edu```
+
+**2. Configure the Database**
+
+- Open phpMyAdmin or MySQL console.
+- Create a new database:
+  
+```CREATE DATABASE online_billing_system_pahana_edu;```
+
+- Import the provided SQL script online_billing_system_pahana_edu.sql (located in /database folder) to create tables and seed initial data.
+- Update the database connection in DBConnection.java:
+
+```private static final String DB_URL = "jdbc:mysql://localhost:3306/online_billing_system_pahana_edu";```
+
+```private static final String DB_USER = "root";```
+
+```private static final String DB_PASSWORD = "your_password";```
+
+**3. Build and Deploy**
+
+Open the project in NetBeans IDE.
+
+Right-click the project → Clean and Build.
+
+Right-click → Deploy to Apache Tomcat 9.
+
+**4. Access the Application**
+
+Open your browser and go to:
+
+http://localhost:8081/Online-Billing-System-Pahana-Edu/
+
+Log in using the default credentials (provided in SQL seed):
+
+Admin:
+- Username: admin
+- Password: Admin@123
+
+Staff: 
+- Username: staff1
+- Password: Staff1@123
+
+**5. Usage**
+
+Admin: Full access to users, customers, books, bills, help section.
+
+Staff: Access to customers, books, bills, and help section (restricted editing).
+
+**6. Troubleshooting**
+
+Ensure MySQL server is running and credentials in DBConnection.java are correct.
+
+Make sure Tomcat is running on the correct port (8081).
+
+Check logs in NetBeans or Tomcat logs folder for errors.
+
+---
+
 ## 📸 Visual Previews  
 ### Pahana Edu's Online Billing System UI
 
@@ -176,77 +250,7 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
 <img width="980" height="1101" alt="image" src="https://github.com/user-attachments/assets/ffaa8fec-9591-4be1-a8c0-33a09d03def0" />
 
-## 🚀 Getting Started (Installation)
-
-Follow these steps to run the **Pahana Edu Online Billing System** locally on your machine:
-
-### **Prerequisites**
-- **Java JDK 8 or higher**  
-- **Apache Tomcat 9** (or compatible Java EE server)  
-- **NetBeans IDE** (or any Java EE compatible IDE)  
-- **MySQL Server** (with phpMyAdmin optional for database management)  
-- **Maven** (for build and dependency management)
-
 ---
-
-### **1. Clone the Repository**
-```git clone https://github.com/Thahirah-Razmi/Online-Billing-System-Pahana-Edu.git```
-
-```cd Online-Billing-System-Pahana-Edu```
-
-**2. Configure the Database**
-
-- Open phpMyAdmin or MySQL console.
-- Create a new database:
-  
-```CREATE DATABASE online_billing_system_pahana_edu;```
-
-- Import the provided SQL script online_billing_system_pahana_edu.sql (located in /database folder) to create tables and seed initial data.
-- Update the database connection in DBConnection.java:
-
-```private static final String DB_URL = "jdbc:mysql://localhost:3306/online_billing_system_pahana_edu";```
-
-```private static final String DB_USER = "root";```
-
-```private static final String DB_PASSWORD = "your_password";```
-
-**3. Build and Deploy**
-
-Open the project in NetBeans IDE.
-
-Right-click the project → Clean and Build.
-
-Right-click → Deploy to Apache Tomcat 9.
-
-**4. Access the Application**
-
-Open your browser and go to:
-
-http://localhost:8081/Online-Billing-System-Pahana-Edu/
-
-Log in using the default credentials (provided in SQL seed):
-
-Admin:
-- Username: admin
-- Password: Admin@123
-
-Staff: 
-- Username: staff1
-- Password: Staff1@123
-
-**5. Usage**
-
-Admin: Full access to users, customers, books, bills, help section.
-
-Staff: Access to customers, books, bills, and help section (restricted editing).
-
-**6. Troubleshooting**
-
-Ensure MySQL server is running and credentials in DBConnection.java are correct.
-
-Make sure Tomcat is running on the correct port (8081).
-
-Check logs in NetBeans or Tomcat logs folder for errors.
 
 ## 👩‍💻 Author  
 
