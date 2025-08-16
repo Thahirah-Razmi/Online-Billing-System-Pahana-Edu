@@ -13,65 +13,65 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
 2. **Admin Dashboard Functionalities**
 
-Admins have full access to all system features:
+    Admins have full access to all system features:
 
-**Manage User Information**
-   - Add new users with username, email, password, and role.
-   - View all users.
-   - Edit or delete existing user information.
+    **Manage User Information**
+      - Add new users with username, email, password, and role.
+      - View all users.
+      - Edit or delete existing user information.
 
-**Manage Customer Information**
-   - Add new customers with account number, name, address, telephone, and email.
-   - View detailed account information.
-   - Search customers by account number, name, address, or email.
-   - Edit or delete existing customer information.
+   **Manage Customer Information**
+      - Add new customers with account number, name, address, telephone, and email.
+      - View detailed account information.
+      - Search customers by account number, name, address, or email.
+      - Edit or delete existing customer information.
 
-**Manage Book Information**
-   - Add new books with title, category, author, language, and price.
-   - View all books.
-   - Search books by title, category, author, or language.
-   - Edit or delete existing book information.
+   **Manage Book Information**
+      - Add new books with title, category, author, language, and price.
+      - View all books.
+      - Search books by title, category, author, or language.
+      - Edit or delete existing book information.
 
-**Manage Bill Information**
-   - Calculate bills, generate and print invoices.
-   - View all sales records.
-   - Filter by customer account number, invoice number, or date.
-   - Delete bills.
+   **Manage Bill Information**
+      - Calculate bills, generate and print invoices.
+      - View all sales records.
+      - Filter by customer account number, invoice number, or date.
+      - Delete bills.
 
-**Help Section**
-   - Guidelines and tips for new users on how to use the system.
+   **Help Section**
+      - Guidelines and tips for new users on how to use the system.
 
-**Logout**
-   - Logout and end session securely.
+   **Logout**
+       - Logout and end session securely.
 
-3. **Staff Dashboard Functionalities**
+    3. **Staff Dashboard Functionalities**
 
-Staff (Manager and Cashier) have restricted access:
+       Staff (Manager and Cashier) have restricted access:
 
-**Manage Customer Information**
-   - Add new customers with account number, name, address, telephone, and email.
-   - View detailed account information.
-   - Search customers by account number, name, address, or email.
-   - Edit existing customer information.
+    **Manage Customer Information**
+      - Add new customers with account number, name, address, telephone, and email.
+      - View detailed account information.
+      - Search customers by account number, name, address, or email.
+      - Edit existing customer information.
 
-**Manage Book Information**
-   - Add new books with title, category, author, language, and price.
-   - View all books.
-   - Search books by title, category, author, or language.
-   - Edit existing book information.
+   **Manage Book Information**
+      - Add new books with title, category, author, language, and price.
+      - View all books.
+      - Search books by title, category, author, or language.
+      - Edit existing book information.
 
-**Manage Bill Information**
-   - Calculate bills, generate and print invoices.
-   - View all sales records.
-   - Filter by customer account number, invoice number, or date.
+   **Manage Bill Information**
+      - Calculate bills, generate and print invoices.
+      - View all sales records.
+      - Filter by customer account number, invoice number, or date.
 
-**Help Section**
-   - Guidelines and tips for new users on how to use the system.
+   **Help Section**
+      - Guidelines and tips for new users on how to use the system.
 
-**Logout**
-   - Logout and end session securely.
+   **Logout**
+      - Logout and end session securely.
 
-> **⚠️ Note: Staff do not have access to manage user accounts.**
+   > **⚠️ Note: Staff do not have access to manage user accounts.**
 
 ---
 
