@@ -237,12 +237,15 @@ Staff:
 **5. Usage**
 
 Admin: Full access to users, customers, books, bills, help section.
+
 Staff: Access to customers, books, bills, and help section (restricted editing).
 
 **6. Troubleshooting**
 
 Ensure MySQL server is running and credentials in DBConnection.java are correct.
+
 Make sure Tomcat is running on the correct port (8081).
+
 Check logs in NetBeans or Tomcat logs folder for errors.
 
 ## 👩‍💻 Author  
