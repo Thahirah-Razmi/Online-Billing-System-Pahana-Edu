@@ -44,7 +44,7 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
    **Logout**
        - Logout and end session securely.
 
-    3. **Staff Dashboard Functionalities**
+3. **Staff Dashboard Functionalities**
 
        Staff access is divided into Manager and Cashier, with different privileges:
 
