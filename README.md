@@ -46,7 +46,7 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
 3. **Staff Dashboard Functionalities**
 
-       Staff access is divided into Manager and Cashier, with different privileges:
+   Staff access is divided into Manager and Cashier, with different privileges:
 
     **Staff (Manager)**
 
@@ -73,6 +73,7 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
    **Logout**
       - Logout and end session securely.
 
+
    > **⚠️ Note: Managers do not have access to Manage User Information.**
 
    **Staff (Cashier)**
@@ -97,6 +98,7 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
    **Logout**
       - Logout and end session securely.
+
 
    > **⚠️ Note: Cashiers do not have access to Manage User Information and cannot modify records.**
 
@@ -130,7 +132,7 @@ Follow these steps to run the **Pahana Edu Online Billing System** locally on yo
 ---
 
 ### **1. Clone the Repository**
-```git clone https://github.com/Thahirah-Razmi/Online-Billing-System-Pahana-Edu.git```
+`git clone https://github.com/Thahirah-Razmi/Online-Billing-System-Pahana-Edu.git`
 
 ```cd Online-Billing-System-Pahana-Edu```
 
