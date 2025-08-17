@@ -1,6 +1,21 @@
 # 📚 Online-Billing-System-Pahana-Edu
 
+[![Java](https://img.shields.io/badge/Java-8+-blue)](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
+[![Maven](https://img.shields.io/badge/Maven-3.8+-green)](https://maven.apache.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](./LICENSE)
+
 Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-based web application enables the digital transformation of Pahana Edu’s customer and billing management by automating customer registration, billing calculation, book management, and secure user access.
+
+---
+
+## 📌 Table of Contents
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started-installation)
+- [Role-Based Access](#-role-based-access)
+- [Visual Previews](#-visual-previews)
+- [Author](#-author)
+- [License](#-license)
 
 ---
 
@@ -101,6 +116,9 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
 
    > **⚠️ Note: Cashiers do not have access to Manage User Information and cannot modify records.**
+   
+
+   
 
 ---
 
@@ -152,13 +170,9 @@ CREATE DATABASE online_billing_system_pahana_edu;
 
 ```
 private static final String DB_URL = "jdbc:mysql://localhost:3306/online_billing_system_pahana_edu";
-```
 
-```
 private static final String DB_USER = "root";
-```
 
-```
 private static final String DB_PASSWORD = "your_password";
 ```
 
@@ -213,13 +227,27 @@ Manager:
   Emily@123
   ```
 
-**5. Usage**
+| Role    | Username | Password    |
+| ------- | -------- | ----------- |
+| Admin   | admin    | Admin\@123  |
+| Manager | Emily    | Emily\@123  |
+| Cashier | staff1   | Staff1\@123 |
+
+**5. Role-Based Access**
 
 Admin: Full access to users, customers, books, bills, help section.
 
 Staff (Manager): Access to customers, books, bills (view & edit), and help section.
 
 Staff (Cashier): Access to customers, books, bills (view only), and help section.
+
+| Feature          | Admin              | Manager       | Cashier      |
+| ---------------- | ------------------ | ------------ | ------------ |
+| Manage Users     | ✅ Add/Edit/Delete | ❌          | ❌           |
+| Manage Customers | ✅                 | ✅ Add/Edit | ✅ View Only |
+| Manage Items     | ✅                 | ✅ Add/Edit | ✅ View Only |
+| Manage Bills     | ✅                 | ✅          | ✅           |
+| Help Section     | ✅                 | ✅          | ✅           |
 
 **6. Troubleshooting**
 
