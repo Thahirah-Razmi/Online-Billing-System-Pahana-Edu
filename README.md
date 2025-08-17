@@ -181,16 +181,37 @@ http://localhost:8081/Online-Billing-System-Pahana-Edu/
 Log in using the default credentials (provided in SQL seed):
 
 Admin:
-- Username: admin
-- Password: Admin@123
+- Username:
+  ```
+  admin
+  ```
+  
+- Password:
+  ```
+  Admin@123
+  ```
 
 Cashier: 
-- Username: staff1
-- Password: Staff1@123
+- Username:
+  ```
+  staff1
+  ```
+
+- Password:
+  ```
+  Staff1@123
+  ```
 
 Manager:
-- Username: Emily
-- Password: Emily@123
+- Username:
+  ```
+  Emily
+  ```
+  
+- Password:
+  ```
+  Emily@123
+  ```
 
 **5. Usage**
 
