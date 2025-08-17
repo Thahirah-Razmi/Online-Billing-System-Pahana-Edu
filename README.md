@@ -176,7 +176,9 @@ Right-click → Deploy to Apache Tomcat 9.
 
 Open your browser and go to:
 
+```
 http://localhost:8081/Online-Billing-System-Pahana-Edu/
+```
 
 Log in using the default credentials (provided in SQL seed):
 
