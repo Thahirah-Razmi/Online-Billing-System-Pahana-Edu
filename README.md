@@ -46,7 +46,9 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
 
     3. **Staff Dashboard Functionalities**
 
-       Staff (Manager and Cashier) have restricted access:
+       Staff access is divided into Manager and Cashier, with different privileges:
+
+    **Staff (Manager)**
 
     **Manage Customer Information**
       - Add new customers with account number, name, address, telephone, and email.
@@ -71,7 +73,32 @@ Pahana Edu is a leading bookshop based in Colombo City, Sri Lanka. This Java EE-
    **Logout**
       - Logout and end session securely.
 
-   > **⚠️ Note: Staff do not have access to manage user accounts.**
+   > **⚠️ Note: Managers do not have access to Manage User Information.**
+
+   **Staff (Cashier)**
+
+    **Manage Customer Information**
+      - Add new customers with account number, name, address, telephone, and email.
+      - View detailed account information.
+      - Search customers by account number, name, address, or email.
+
+   **Manage Book Information**
+      - Add new books with title, category, author, language, and price.
+      - View all books.
+      - Search books by title, category, author, or language.
+
+   **Manage Bill Information**
+      - Calculate bills, generate and print invoices.
+      - View all sales records.
+      - Filter by customer account number, invoice number, or date.
+
+   **Help Section**
+      - Guidelines and tips for new users on how to use the system.
+
+   **Logout**
+      - Logout and end session securely.
+
+   > **⚠️ Note: Cashiers do not have access to Manage User Information and cannot modify records.**
 
 ---
 
@@ -143,15 +170,21 @@ Admin:
 - Username: admin
 - Password: Admin@123
 
-Staff: 
+Cashier: 
 - Username: staff1
 - Password: Staff1@123
+
+Manager:
+- Username: Emily
+- Password: Emily@123
 
 **5. Usage**
 
 Admin: Full access to users, customers, books, bills, help section.
 
-Staff: Access to customers, books, bills, and help section (restricted editing).
+Staff (Manager): Access to customers, books, bills (view & edit), and help section.
+
+Staff (Cashier): Access to customers, books, bills (view only), and help section.
 
 **6. Troubleshooting**
 
