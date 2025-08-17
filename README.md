@@ -132,14 +132,13 @@ Follow these steps to run the **Pahana Edu Online Billing System** locally on yo
 ---
 
 ### **1. Clone the Repository**
-`git clone https://github.com/Thahirah-Razmi/Online-Billing-System-Pahana-Edu.git`
-
-```cd Online-Billing-System-Pahana-Edu```
-
-
+```
 git clone https://github.com/Thahirah-Razmi/Online-Billing-System-Pahana-Edu.git
-cd Online-Billing-System-Pahana-Edu
+```
 
+```
+cd Online-Billing-System-Pahana-Edu
+```
 
 **2. Configure the Database**
 
