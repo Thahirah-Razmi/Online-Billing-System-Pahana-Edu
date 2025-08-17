@@ -233,7 +233,17 @@ Manager:
 | Manager | Emily    | Emily\@123  |
 | Cashier | staff1   | Staff1\@123 |
 
-**5. Role-Based Access**
+**5. Troubleshooting**
+
+Ensure MySQL server is running and credentials in DBConnection.java are correct.
+
+Make sure Tomcat is running on the correct port (8081).
+
+Check logs in NetBeans or Tomcat logs folder for errors.
+
+---
+
+## 🔐 Role-Based Access
 
 Admin: Full access to users, customers, books, bills, help section.
 
@@ -248,16 +258,6 @@ Staff (Cashier): Access to customers, books, bills (view only), and help section
 | Manage Items     | ✅                 | ✅ Add/Edit | ✅ View Only |
 | Manage Bills     | ✅                 | ✅          | ✅           |
 | Help Section     | ✅                 | ✅          | ✅           |
-
-**6. Troubleshooting**
-
-Ensure MySQL server is running and credentials in DBConnection.java are correct.
-
-Make sure Tomcat is running on the correct port (8081).
-
-Check logs in NetBeans or Tomcat logs folder for errors.
-
----
 
 ## 📸 Visual Previews  
 ### Pahana Edu's Online Billing System UI
@@ -351,3 +351,7 @@ Check logs in NetBeans or Tomcat logs folder for errors.
 ## 👩‍💻 Author  
 
 [Thahirah Razmi](https://github.com/Thahirah-Razmi)
+
+## 📄 License
+
+This project is licensed under the MIT License.
